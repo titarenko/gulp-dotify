@@ -1,6 +1,6 @@
 {
   "name": "gulp-dotify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": "https://github.com/titarenko/gulp-dotify",
   "description": "Gulp plugin for precompilation of doT templates.",
   "main": "index.js",
