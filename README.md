@@ -7,6 +7,7 @@
 [![Build Status](https://secure.travis-ci.org/titarenko/gulp-dotify.png?branch=master)](https://travis-ci.org/titarenko/gulp-dotify) 
 [![Code Climate](https://codeclimate.com/github/titarenko/gulp-dotify.png)](https://codeclimate.com/github/titarenko/gulp-dotify) 
 [![Coverage Status](https://coveralls.io/repos/titarenko/gulp-dotify/badge.png)](https://coveralls.io/r/titarenko/gulp-dotify)
+
 [![NPM](https://nodei.co/npm/gulp-dotify.png?downloads=true&stars=true)](https://nodei.co/npm/gulp-dotify/)
 
 ## Example
