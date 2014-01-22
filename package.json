@@ -5,7 +5,7 @@
   "description": "Gulp plugin for precompilation of doT templates.",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul cover node_modules/mocha/bin/_mocha -- --recursive test -R spec -r should"
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- --recursive test -R spec -r should && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "keywords": [
     "doT",
@@ -25,6 +25,7 @@
   "devDependencies": {
     "mocha": "~1.17.0",
     "should": "~3.0.1",
-    "istanbul": "~0.2.4"
+    "istanbul": "~0.2.4",
+    "coveralls": "~2.6.1"
   }
 }
