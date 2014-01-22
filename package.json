@@ -1,0 +1,30 @@
+{
+  "name": "gulp-dotify",
+  "version": "0.1.0",
+  "repository": "https://github.com/titarenko/gulp-dotify",
+  "description": "Gulp plugin for precompilation of doT templates.",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- --recursive test -R spec -r should"
+  },
+  "keywords": [
+    "doT",
+    "template",
+    "precompilation",
+    "gulp",
+    "plugin"
+  ],
+  "author": "Constantin Titarenko",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "dot": "~1.0.2",
+    "through2": "~0.4.0",
+    "gulp-util": "~2.2.12"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.0",
+    "should": "~3.0.1",
+    "istanbul": "~0.2.4"
+  }
+}
