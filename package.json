@@ -12,7 +12,8 @@
     "template",
     "precompilation",
     "gulp",
-    "plugin"
+    "plugin",
+    "gulpplugin"
   ],
   "author": "Constantin Titarenko",
   "license": "MIT",
