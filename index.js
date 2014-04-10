@@ -42,15 +42,19 @@ function gulpDotify(options) {
 	var stream = through.obj(function (file, enc, callback) {
 		var complete = function (error, contents) {
 			if (error) {
-				throw new PluginError(PLUGIN_NAME, error);
+				this.emit('error', new PluginError(PLUGIN_NAME, error));
 			}
-			
-			var name = getTemplateName(options.root, file.path, options.extension, options.separator);
-			var code = getTemplateCode(contents);
-			file.contents = new Buffer([options.dictionary, '["', name, '"] = ', code, ';'].join(''));
-			
-			this.push(file);
-			return callback();
+			try {
+				var name = getTemplateName(options.root, file.path, options.extension, options.separator);
+				var code = getTemplateCode(contents);
+				file.contents = new Buffer([options.dictionary, '["', name, '"] = ', code, ';'].join(''));
+
+				this.push(file);
+				return callback();
+			}
+			catch (exception) {
+				this.emit('error', new PluginError(PLUGIN_NAME, exception));
+			}
 		}.bind(this);
 
 		if (file.isBuffer()) {
