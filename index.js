@@ -5,7 +5,7 @@ var _ = require('lodash');
 var path = require('path');
 var PluginError = gutil.PluginError;
 
-const PLUGIN_NAME = 'gulp-templatify';
+const PLUGIN_NAME = 'gulp-dotify';
 
 function getTemplateName(root, name, extension, separator) {
 	var parts = name.split(path.sep);
