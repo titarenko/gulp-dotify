@@ -13,7 +13,7 @@ function getTemplateName(root, name, extension, separator) {
     //clean possible leading dots
     relativeName = relativeName.replace('../', '');
     //remove extension
-    relativeName = path.basename(relativeName, extension);
+    relativeName = path.join(path.dirname(relativeName),path.basename(relativeName, extension));
     //return new template name with separator
     return relativeName.replace('/', separator);
 }
