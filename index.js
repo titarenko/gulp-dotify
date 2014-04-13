@@ -8,12 +8,14 @@ var PluginError = gutil.PluginError;
 const PLUGIN_NAME = 'gulp-dotify';
 
 function getTemplateName(root, name, extension, separator) {
-	var parts = name.split(path.sep);
-	var i = parts.indexOf(root);
-	parts = parts.slice(i + 1);
-	i = parts.length - 1;
-	parts[i] = path.basename(parts[i], extension);
-	return parts.join(separator);
+    //get relative name from root to name
+    var relativeName = path.normalize(path.relative(root, name));
+    //clean possible leading dots
+    relativeName = relativeName.replace('../', '');
+    //remove extension
+    relativeName = path.join(path.dirname(relativeName),path.basename(relativeName, extension));
+    //return new template name with separator
+    return relativeName.replace('/', separator);
 }
 
 function getTemplateCode(content) {
@@ -64,6 +66,6 @@ function gulpDotify(options) {
 		}
 	});
 	return stream;
-};
+}
 
 module.exports = gulpDotify;
